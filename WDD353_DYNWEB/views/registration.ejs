@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title><%-pagename%></title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+    <script src="/scripts/registration"></script>
+</head>
+<body id="page-top">
+<!-- Navigation-->
+<%-include('includes/nav')%>
+<!-- Masthead-->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Registration</h1>
+        <!-- Icon Divider-->
+
+        <!-- Masthead Subheading-->
+
+    </div>
+</header>
+
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <form action="/registration" method="POST">
+
+        <div class="rendered-form">
+                <div class="formbuilder-text form-group field-firstName">
+                    <label for="firstName" class="formbuilder-text-label">First Name<span class="formbuilder-required">*</span></label>
+                    <input type="text" placeholder="Enter first name" class="form-control" name="firstName" access="false" id="firstName" aria-required="true">
+
+                    <% if (typeof error !== "undefined") { %>
+                        <p>Form could not be submitted due to the following error:</p>
+                        <p><%= errors.firstNameMsg %></p>
+                    <% } %>
+                </div>
+                <div class="formbuilder-text form-group field-lastName">
+                    <label for="lastName" class="formbuilder-text-label">Last Name<span class="formbuilder-required">*</span></label>
+                    <input type="text" placeholder="Enter last name" class="form-control" name="lastName" access="false" id="lastName" aria-required="true">
+                    <% if(typeof(errors) != "undefined"){ %>
+                    <span> <%errors.lastName.errorMsg%>  </span>
+                    <% } %>
+                </div>
+                <div class="formbuilder-text form-group field-city">
+                    <label for="city" class="formbuilder-text-label">City<span class="formbuilder-required">*</span></label>
+                    <input type="text" placeholder="Enter city" class="form-control" name="city" access="false" id="city" aria-required="true">
+                    <% if(typeof(errors) != "undefined"){ %>
+                    <span> <%errors.city.errorMsg%>  </span>
+                    <% } %>
+                </div>
+                <div class="formbuilder-text form-group field-state">
+                    <label for="state" class="formbuilder-text-label">State<span class="formbuilder-required">*</span></label>
+                    <input type="text" placeholder="Enter state" class="form-control" name="state" access="false" id="state" aria-required="true">
+                    <% if(typeof(errors) != "undefined"){ %>
+                    <span> <%errors.state.errorMsg%>  </span>
+                    <% } %>
+                </div>
+                <div class="formbuilder-text form-group field-zipCode">
+                    <label for="zipCode" class="formbuilder-text-label">Zip Code<span class="formbuilder-required">*</span></label>
+                    <input type="text" placeholder="Enter zip code" class="form-control" name="zipCode" access="false" id="zipCode" aria-required="true">
+                    <% if(typeof(errors) != "undefined"){ %>
+                    <span> <%errors.zip.errorMsg%>  </span>
+                    <% } %>
+                </div>
+                <div class="formbuilder-select form-group field-age">
+                    <label for="age" class="formbuilder-select-label">Age<span class="formbuilder-required">*</span></label>
+                    <select class="form-control" name="age" id="age" aria-required="true">
+                        <option value="0" selected="true" id="age-0">Select One</option>
+                        <option value="1" id="age-1">18 to 30</option>
+                        <option value="2" id="age-2">30 to 50</option>
+                        <option value="3" id="age-3">Over 50</option>
+                    </select>
+                    <% if(typeof(errors) != "undefined"){ %>
+                    <span> <%errors.age.errorMsg%>  </span>
+                    <% } %>
+                </div>
+                <div class="formbuilder-radio-group form-group field-radio-group-1655469595576">
+                    <label for="radio-group-1655469595576" class="formbuilder-radio-group-label">Select Gender<span class="formbuilder-required">*</span></label>
+                    <div class="radio-group">
+                        <div class="formbuilder-radio">
+                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-0" aria-required="true" value="0" type="radio">
+                            <label for="radio-group-1655469595576-0">Select One</label>
+                        </div>
+                        <div class="formbuilder-radio">
+                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-1" aria-required="true" value="1" type="radio">
+                            <label for="radio-group-1655469595576-1">Male</label>
+                        </div>
+                        <div class="formbuilder-radio">
+                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-2" aria-required="true" value="2" type="radio">
+                            <label for="radio-group-1655469595576-2">Female</label>
+                        </div>
+                        <div class="formbuilder-radio">
+                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-3" aria-required="true" value="3" type="radio">
+                            <label for="radio-group-1655469595576-3">Non-Binary</label>
+                        </div>
+                        <div class="formbuilder-radio">
+                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-4" aria-required="true" type="radio">
+                            <label for="radio-group-1655469595576-4">Prefer Not To Say</label>
+                        </div>
+                    </div>
+                    <% if(typeof(errors) != "undefined"){ %>
+                    <span> <%errors.gender.errorMsg%>  </span>
+                    <% } %>
+                </div>
+                <div class="formbuilder-checkbox-group form-group field-acceptTerms">
+                    <label for="acceptTerms" class="formbuilder-checkbox-group-label">Accept Terms<span class="formbuilder-required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="formbuilder-checkbox">
+                            <input name="acceptTerms[]" access="false" id="acceptTerms-0" aria-required="true" value="1" type="checkbox">
+                            <label for="acceptTerms-0">I Accept The Terms Of This Form</label>
+                            <% if(typeof(errors) != "undefined"){ %>
+                            <span> <%errors.consent.errorMsg%>  </span>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="formbuilder-textarea form-group field-bio">
+                    <label for="bio" class="formbuilder-textarea-label">Bio<span class="formbuilder-required">*</span></label>
+                    <textarea type="textarea" placeholder="Enter something about yourself" class="form-control" name="bio" access="false" id="bio" aria-required="true"></textarea>
+                    <% if(typeof(errors) != "undefined"){ %>
+                    <span> <%errors.bio.errorMsg%>  </span>
+                    <% } %>
+                </div>
+                <div class="formbuilder-button form-group field-submit">
+                    <button type="submit" class="btn-success btn" name="submit" access="false" style="success" id="submit">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+<!-- Footer-->
+<%-include('includes/footer')%>
+<!-- Copyright Section-->
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

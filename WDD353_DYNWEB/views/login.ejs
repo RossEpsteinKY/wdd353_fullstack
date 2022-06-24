@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title><%-pagename%></title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+    <script src="/scripts/login.js"></script>
+</head>
+<body id="page-top">
+<!-- Navigation-->
+<%-include('includes/nav')%>
+<!-- Masthead-->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Login</h1>
+        <!-- Icon Divider-->
+
+        <!-- Masthead Subheading-->
+
+    </div>
+</header>
+
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <form action="/registration" method="POST">
+
+            <div class="rendered-form">
+                <div class="formbuilder-text form-group field-userName">
+
+                    <label for="userName" class="formbuilder-text-label">Username<span class="formbuilder-required">*</span></label>
+                    <input type="text" placeholder="Enter Username" class="form-control" name="userName" access="false" id="userName" aria-required="true">
+
+
+                </div>
+                <div class="formbuilder-text form-group field-password">
+                    <label for="password" class="formbuilder-text-label">Password<span class="formbuilder-required">*</span></label>
+                    <input type="password" placeholder="Enter Password" class="form-control" name="password" access="false" id="password" aria-required="true">
+<!--                    <% if(typeof(errors) != "undefined"){ %>-->
+<!--                    <span> <%errors.password.errorMsg%>  </span>-->
+<!--                    <% } %>-->
+                </div>
+                <div class="formbuilder-button form-group">
+                    <a onClick = "submitLogin(event)">
+                    <button class="btn-success btn" name="submit" access="false" style="success" id="submit"
+                    >Submit</button></a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+<!-- Footer-->
+<%-include('includes/footer')%>
+<!-- Copyright Section-->
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const {router} = require("express/lib/application");
+
+    function submitLogin(event){
+        var userNameEntered = document.getElementById("userName").value;
+        var passwordEntered = document.getElementById("password").value;
+
+        // alert(passwordEntered + " " + userNameEntered);
+        if (userNameEntered !== loginInfo.username || passwordEntered !== loginInfo.password) {
+            alert("Invalid username or password");
+        }else{
+            alert('login successful');
+            router.get('/portfolio');
+
+        }
+
+
+    }
+</script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
+
