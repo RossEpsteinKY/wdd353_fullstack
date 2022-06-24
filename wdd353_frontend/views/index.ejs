@@ -21,6 +21,9 @@
 <%-include('includes/nav')%>
 <!-- Masthead-->
 <header class="masthead bg-primary text-white text-center">
+    <% if (typeof message !== "undefined") { %>
+        <p>Successfully Completed Creation of user! <b><%= message %></b></p>
+    <% } %>
     <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
         <img class="masthead-avatar mb-5" src="/img/avataaars.svg" alt="..." />
