@@ -1,6 +1,7 @@
 const express = require('express');
 const res = require("express/lib/response");
 const router = express.Router();
+const getLogin = require('../api/api/api');
 
 router.get('/', (req,res) =>{
         res.render('index',{
@@ -34,31 +35,20 @@ router.get('/registration', (req,res) =>{
 
 router.post('/registration', (req,res) =>{
 
-    // var registrationCheck = require("../public/scripts/registration");
-    // registrationCheck.checkForm(req);
+    if(req){
 
-    // console.log('hits');
-    // if(req.body.firstName == ''){
-    //     registration.firstName.error = true;
-    // }else {
-    //     console.log(req.body.firstName);
-    // }
-    // const nameRequired = 'Name is required!';
-    // const emailRequired = 'Email is required!';
-    // const emailNotValid = 'Email is wrong!';
-    // const mobileRequired = 'Mobile is required!';
+    }else{
 
+    }
 
-
-    // console.log("the name is:  " + username);
-    //
-    // // Form.create(f,function(err,newlyCreatedForm){
-    // //     if(err)
-    // //     {
-    // //         console.log(err);
-    // //     }else{
-    // //         res.redirect("/result");
-    // //     }
-    // // });
 });
+
+router.post('/login', async (res,req) => {
+    if(req){
+        const userid = req.body.username;
+
+    }else{
+
+    }
+})
 module.exports = router;
