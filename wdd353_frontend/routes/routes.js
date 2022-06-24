@@ -38,6 +38,8 @@ router.post('/registration', async (req, res) => {
 
 
     console.log("hits the route");
+
+
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const city = req.body.city;
@@ -59,6 +61,8 @@ router.post('/registration', async (req, res) => {
             consent: consent,
             bio: bio,
         };
+
+        console.log(data);
 
         await postRegistration(data).then((result =>{
             console.log(result.data);

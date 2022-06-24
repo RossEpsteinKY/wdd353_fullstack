@@ -69,9 +69,9 @@
                     <span> <%errors.state.errorMsg%>  </span>
                     <% } %>
                 </div>
-                <div class="formbuilder-text form-group field-zipCode">
-                    <label for="zipCode" class="formbuilder-text-label">Zip Code<span class="formbuilder-required">*</span></label>
-                    <input type="text" placeholder="Enter zip code" class="form-control" name="zipCode" access="false" id="zipCode" aria-required="true">
+                <div class="formbuilder-text form-group field-zip">
+                    <label for="zip" class="formbuilder-text-label">Zip Code<span class="formbuilder-required">*</span></label>
+                    <input type="text" placeholder="Enter zip code" class="form-control" name="zip" access="false" id="zip" aria-required="true">
                     <% if(typeof(errors) != "undefined"){ %>
                     <span> <%errors.zip.errorMsg%>  </span>
                     <% } %>
@@ -80,38 +80,20 @@
                     <label for="age" class="formbuilder-select-label">Age<span class="formbuilder-required">*</span></label>
                     <select class="form-control" name="age" id="age" aria-required="true">
                         <option value="0" selected="true" id="age-0">Select One</option>
-                        <option value="1" id="age-1">18 to 30</option>
-                        <option value="2" id="age-2">30 to 50</option>
-                        <option value="3" id="age-3">Over 50</option>
+                        <option value="18-to-30" id="age-1">18 to 30</option>
+                        <option value="30-to-50" id="age-2">30 to 50</option>
+                        <option value="over-50" id="age-3">Over 50</option>
                     </select>
                     <% if(typeof(errors) != "undefined"){ %>
                     <span> <%errors.age.errorMsg%>  </span>
                     <% } %>
                 </div>
-                <div class="formbuilder-radio-group form-group field-radio-group-1655469595576">
-                    <label for="radio-group-1655469595576" class="formbuilder-radio-group-label">Select Gender<span class="formbuilder-required">*</span></label>
-                    <div class="radio-group">
-                        <div class="formbuilder-radio">
-                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-0" aria-required="true" value="0" type="radio">
-                            <label for="radio-group-1655469595576-0">Select One</label>
-                        </div>
-                        <div class="formbuilder-radio">
-                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-1" aria-required="true" value="1" type="radio">
-                            <label for="radio-group-1655469595576-1">Male</label>
-                        </div>
-                        <div class="formbuilder-radio">
-                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-2" aria-required="true" value="2" type="radio">
-                            <label for="radio-group-1655469595576-2">Female</label>
-                        </div>
-                        <div class="formbuilder-radio">
-                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-3" aria-required="true" value="3" type="radio">
-                            <label for="radio-group-1655469595576-3">Non-Binary</label>
-                        </div>
-                        <div class="formbuilder-radio">
-                            <input name="radio-group-1655469595576" access="false" id="radio-group-1655469595576-4" aria-required="true" type="radio">
-                            <label for="radio-group-1655469595576-4">Prefer Not To Say</label>
-                        </div>
-                    </div>
+                <div class="formbuilder-select form-group field-gender">
+                    <p>Please select your favorite Web language:</p>
+                     <input type="radio" id="html" name="gender" value="Male"><label for="Male">Male</label><br>
+                     <input type="radio" id="css" name="gender" value="Female"><label for="Female">Female</label><br>
+                     <input type="radio" id="javascript" name="gender" value="Non-Binary"><label for="Non-Binary">Non-Binary</label>
+                </div>
                     <% if(typeof(errors) != "undefined"){ %>
                     <span> <%errors.gender.errorMsg%>  </span>
                     <% } %>
@@ -120,7 +102,7 @@
                     <label for="acceptTerms" class="formbuilder-checkbox-group-label">Accept Terms<span class="formbuilder-required">*</span></label>
                     <div class="checkbox-group">
                         <div class="formbuilder-checkbox">
-                            <input name="acceptTerms[]" access="false" id="acceptTerms-0" aria-required="true" value="1" type="checkbox">
+                            <input name="consent" access="false" id="consent-0" aria-required="true" value="1" type="checkbox">
                             <label for="acceptTerms-0">I Accept The Terms Of This Form</label>
                             <% if(typeof(errors) != "undefined"){ %>
                             <span> <%errors.consent.errorMsg%>  </span>
