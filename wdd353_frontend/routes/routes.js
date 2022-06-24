@@ -62,22 +62,21 @@ router.post('/registration', async (req, res) => {
             bio: bio,
         };
 
-        console.log(data);
 
-        await postRegistration(data).then((result =>{
+
+        await postRegistration(data)
+            .then((result) =>{
             console.log(result.data);
-                res.render('index', {
+            res.render('index', {
                 pagename: 'Home',
                 message: result.data.message,
             });
-        }).catch((err) => {
-            res.render('registration', {
-                pagename: 'Registration',
-                message: err.message,
+        }).catch((err)=>{
+                res.render('registration', {
+                    pagename: 'Registration',
+                    message: err.message,
+                });
             });
-            }
-
-        ));
     }
 
 });
