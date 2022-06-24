@@ -9,7 +9,12 @@ const testing = async (data)=>{
     return await axios.post(process.env.service_url, data);
 }
 
+const postRegistration = async (data)=>{
+    return await axios.post(process.env.service_url, data);
+}
+
 module.exports = {
     getLogin,
     testing,
+    postRegistration
 }

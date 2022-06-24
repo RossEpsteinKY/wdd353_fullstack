@@ -2,6 +2,7 @@ const express = require('express');
 const res = require("express/lib/response");
 const router = express.Router();
 const getLogin = require('../api/api/api');
+const {postRegistration} = require("../api/api/api");
 
 router.get('/', (req,res) =>{
         res.render('index',{
@@ -33,16 +34,39 @@ router.get('/registration', (req,res) =>{
     });
 });
 
-router.post('/registration', (req,res) =>{
+router.post('/registration', async (req, res) => {
 
+
+    console.log("hits the route");
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const city = req.body.city;
     const state = req.body.state;
     const zip = req.body.zip;
-    if(req){
+    const age = req.body.age;
+    const gender = req.body.gender;
+    const consent = req.body.consent;
+    const bio = req.body.bio;
+    if (req) {
+        const data = {
+            firstName: firstName,
+            lastName: lastName,
+            city: city,
+            state: state,
+            zip: zip,
+            age: age,
+            gender: gender,
+            consent: consent,
+            bio: bio,
+        };
 
-    }else{
+        await postRegistration(data).then((result =>{
+            console.log(result.data);
+                }
+            )
+        );
+
+    } else {
 
     }
 
