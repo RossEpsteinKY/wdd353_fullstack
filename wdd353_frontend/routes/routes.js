@@ -35,6 +35,11 @@ router.get('/registration', (req,res) =>{
 
 router.post('/registration', (req,res) =>{
 
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const city = req.body.city;
+    const state = req.body.state;
+    const zip = req.body.zip;
     if(req){
 
     }else{
@@ -43,16 +48,16 @@ router.post('/registration', (req,res) =>{
 
 });
 
-router.post('/login', async (res,req) => {
-    const userid = req.body.username;
-    const password = req.body.password;
-
-
-    if(req){
-
-
-    }else{
-
-    }
-})
+// router.post('/login', async (res,req) => {
+//     const userid = req.body.username;
+//     const password = req.body.password;
+//
+//
+//     if(req){
+//
+//
+//     }else{
+//
+//     }
+// })
 module.exports = router;
