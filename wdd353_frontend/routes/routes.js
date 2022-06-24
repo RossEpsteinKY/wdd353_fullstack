@@ -44,8 +44,12 @@ router.post('/registration', (req,res) =>{
 });
 
 router.post('/login', async (res,req) => {
+    const userid = req.body.username;
+    const password = req.body.password;
+
+
     if(req){
-        const userid = req.body.username;
+
 
     }else{
 
