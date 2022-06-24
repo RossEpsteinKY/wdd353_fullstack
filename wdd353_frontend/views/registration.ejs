@@ -39,9 +39,12 @@
         <form action="/registration" method="POST">
 
         <div class="rendered-form">
+            <% if (typeof message !== "undefined") { %>
+                <p>Registration Failed: <b><%= message %></b></p>
+                <% } %>
                 <div class="formbuilder-text form-group field-firstName">
                     <label for="firstName" class="formbuilder-text-label">First Name<span class="formbuilder-required">*</span></label>
-                    <input type="text" placeholder="Enter first name" class="form-control" name="firstName" access="false" id="firstName" aria-required="true">
+                    <input type="text" placeholder="Enter first name" class="form-control" name="firstName" access="false" id="firstName" aria-required="true" required>
 
                     <% if (typeof error !== "undefined") { %>
                         <p>Form could not be submitted due to the following error:</p>
@@ -50,35 +53,35 @@
                 </div>
                 <div class="formbuilder-text form-group field-lastName">
                     <label for="lastName" class="formbuilder-text-label">Last Name<span class="formbuilder-required">*</span></label>
-                    <input type="text" placeholder="Enter last name" class="form-control" name="lastName" access="false" id="lastName" aria-required="true">
+                    <input type="text" placeholder="Enter last name" class="form-control" name="lastName" access="false" id="lastName" aria-required="true" required>
                     <% if(typeof(errors) != "undefined"){ %>
                     <span> <%errors.lastName.errorMsg%>  </span>
                     <% } %>
                 </div>
                 <div class="formbuilder-text form-group field-city">
                     <label for="city" class="formbuilder-text-label">City<span class="formbuilder-required">*</span></label>
-                    <input type="text" placeholder="Enter city" class="form-control" name="city" access="false" id="city" aria-required="true">
+                    <input type="text" placeholder="Enter city" class="form-control" name="city" access="false" id="city" aria-required="true" required>
                     <% if(typeof(errors) != "undefined"){ %>
                     <span> <%errors.city.errorMsg%>  </span>
                     <% } %>
                 </div>
                 <div class="formbuilder-text form-group field-state">
                     <label for="state" class="formbuilder-text-label">State<span class="formbuilder-required">*</span></label>
-                    <input type="text" placeholder="Enter state" class="form-control" name="state" access="false" id="state" aria-required="true">
+                    <input type="text" placeholder="Enter state" class="form-control" name="state" access="false" id="state" aria-required="true" required>
                     <% if(typeof(errors) != "undefined"){ %>
                     <span> <%errors.state.errorMsg%>  </span>
                     <% } %>
                 </div>
                 <div class="formbuilder-text form-group field-zip">
                     <label for="zip" class="formbuilder-text-label">Zip Code<span class="formbuilder-required">*</span></label>
-                    <input type="text" placeholder="Enter zip code" class="form-control" name="zip" access="false" id="zip" aria-required="true">
+                    <input type="text" placeholder="Enter zip code" class="form-control" name="zip" access="false" id="zip" aria-required="true" required>
                     <% if(typeof(errors) != "undefined"){ %>
                     <span> <%errors.zip.errorMsg%>  </span>
                     <% } %>
                 </div>
                 <div class="formbuilder-select form-group field-age">
                     <label for="age" class="formbuilder-select-label">Age<span class="formbuilder-required">*</span></label>
-                    <select class="form-control" name="age" id="age" aria-required="true">
+                    <select class="form-control" name="age" id="age" aria-required="true" required>
                         <option value="0" selected="true" id="age-0">Select One</option>
                         <option value="18-to-30" id="age-1">18 to 30</option>
                         <option value="30-to-50" id="age-2">30 to 50</option>
@@ -88,7 +91,7 @@
                     <span> <%errors.age.errorMsg%>  </span>
                     <% } %>
                 </div>
-                <div class="formbuilder-select form-group field-gender">
+                <div class="formbuilder-select form-group field-gender required">
                     <p>Please select your favorite Web language:</p>
                      <input type="radio" id="html" name="gender" value="Male"><label for="Male">Male</label><br>
                      <input type="radio" id="css" name="gender" value="Female"><label for="Female">Female</label><br>
@@ -102,7 +105,7 @@
                     <label for="acceptTerms" class="formbuilder-checkbox-group-label">Accept Terms<span class="formbuilder-required">*</span></label>
                     <div class="checkbox-group">
                         <div class="formbuilder-checkbox">
-                            <input name="consent" access="false" id="consent-0" aria-required="true" value="1" type="checkbox">
+                            <input name="consent" access="false" id="consent-0" aria-required="true" value="1" type="checkbox" required>
                             <label for="acceptTerms-0">I Accept The Terms Of This Form</label>
                             <% if(typeof(errors) != "undefined"){ %>
                             <span> <%errors.consent.errorMsg%>  </span>
@@ -112,7 +115,7 @@
                 </div>
                 <div class="formbuilder-textarea form-group field-bio">
                     <label for="bio" class="formbuilder-textarea-label">Bio<span class="formbuilder-required">*</span></label>
-                    <textarea type="textarea" placeholder="Enter something about yourself" class="form-control" name="bio" access="false" id="bio" aria-required="true"></textarea>
+                    <textarea type="textarea" placeholder="Enter something about yourself" class="form-control" name="bio" access="false" id="bio" aria-required="true" required></textarea>
                     <% if(typeof(errors) != "undefined"){ %>
                     <span> <%errors.bio.errorMsg%>  </span>
                     <% } %>

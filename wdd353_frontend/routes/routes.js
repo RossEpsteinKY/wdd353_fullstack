@@ -72,6 +72,7 @@ router.post('/registration', async (req, res) => {
                 message: result.data.message,
             });
         }).catch((err)=>{
+            console.log(err.message);
                 res.render('registration', {
                     pagename: 'Registration',
                     message: err.message,
